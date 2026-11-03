@@ -43,7 +43,7 @@ Before anything is stored, the wallet shows what you would receive. Nothing is a
 
 {% include shot.html src="offer-consent.png" alt="Add this credential?: Verified issuer, the issuer's address, the validity and the information it contains" caption="Who issued it, how long it is valid, and every piece of information it contains." %}
 
-- The banner at the top says whether the **issuer is verified**. **Verified issuer · VCu sandbox** means the credential chains to a root this wallet trusts. **Unverified issuer** means the signature and contents are fine, but the root is unknown to the wallet; the screen shows whose it is. Add it only if you expected it. See [Trust and security]({% link user-guide/trust-and-security.md %}).
+- The banner at the top says whether the **issuer is verified**. **Verified issuer · VCu sandbox** means the credential chains to a root this wallet trusts. **Unverified issuer** means the signature and contents are fine, but the root is unknown to the wallet; the screen shows whose it is. Add it only if you expected it. See [Trust and security]({{ '/user-guide/trust-and-security.html' | relative_url }}).
 - **Information it contains** lists everything the issuer put in the credential.
 - **Add credential** asks for Face ID or your passcode, then stores the credential. **Decline offer** discards it and tells the issuer you declined.
 

@@ -10,8 +10,8 @@ description: A native iPhone wallet that receives credentials from issuers and s
   <h1 class="hero-title">Your credentials, on your iPhone. Shared only when you agree.</h1>
   <p class="hero-lead">The iOS Wallet receives digital IDs, licences and other credentials from an issuer, keeps them on your device, and shows a verifier only what you approve.</p>
   <p class="hero-actions">
-    <a class="btn btn-primary" href="{% link getting-started.md %}">Get started</a>
-    <a class="btn btn-outline-light" href="{% link user-guide/index.md %}">Read the user guide</a>
+    <a class="btn btn-primary" href="{{ '/getting-started.html' | relative_url }}">Get started</a>
+    <a class="btn btn-outline-light" href="{{ '/user-guide/' | relative_url }}">Read the user guide</a>
   </p>
   <div class="hero-phones">
     <img src="{{ '/assets/img/share-consent.png' | relative_url }}" alt="The consent screen: Share information?, who is asking, and the one item that will be shared" loading="lazy">
@@ -21,9 +21,9 @@ description: A native iPhone wallet that receives credentials from issuers and s
 </div>
 
 {: .warning }
-> **This is a test and reference wallet, not a production wallet.** It exists so issuers and verifiers have a real iPhone holder to test against. It is distributed through TestFlight, and it trusts the VCu sandbox's issuer and verifier roots only (see [Trust and security]({% link user-guide/trust-and-security.md %})).
+> **This is a test and reference wallet, not a production wallet.** It exists so issuers and verifiers have a real iPhone holder to test against. It is distributed through TestFlight, and it trusts the VCu sandbox's issuer and verifier roots only (see [Trust and security]({{ '/user-guide/trust-and-security.html' | relative_url }})).
 
-These pages describe **build {{ site.wallet_build }}**. Every screenshot was captured from that build with made-up data. They show the **sideos branding**, which is imported into the app; the app's own name is **VCu Wallet** (see [Branding]({% link branding.md %})).
+These pages describe **build {{ site.wallet_build }}**. Every screenshot was captured from that build with made-up data. They show the **sideos branding**, which is imported into the app; the app's own name is **VCu Wallet** (see [Branding]({{ '/branding.html' | relative_url }})).
 
 ## What you can do
 
@@ -46,10 +46,10 @@ These pages describe **build {{ site.wallet_build }}**. Every screenshot was cap
 
 | I want to… | Go to |
 |---|---|
-| Install the app and open it for the first time | [Getting started]({% link getting-started.md %}) |
-| Add, view and share credentials | [User guide]({% link user-guide/index.md %}) |
-| Make my issuer or verifier work with this wallet | [Integration guide]({% link integration.md %}) |
-| Change the wallet's name, colours or logo | [Branding]({% link branding.md %}) |
+| Install the app and open it for the first time | [Getting started]({{ '/getting-started.html' | relative_url }}) |
+| Add, view and share credentials | [User guide]({{ '/user-guide/' | relative_url }}) |
+| Make my issuer or verifier work with this wallet | [Integration guide]({{ '/integration.html' | relative_url }}) |
+| Change the wallet's name, colours or logo | [Branding]({{ '/branding.html' | relative_url }}) |
 
 ## What it supports
 

@@ -37,11 +37,11 @@ The wallet doesn't send you push notifications. The bell is an in-app list.
 
 ### Lock the wallet
 
-Settings → **Security & App Lock** → **Lock wallet when opening** asks for Face ID or your passcode every time the wallet opens. It is off by default; see [Settings]({% link user-guide/settings.md %}).
+Settings → **Security & App Lock** → **Lock wallet when opening** asks for Face ID or your passcode every time the wallet opens. It is off by default; see [Settings]({{ '/user-guide/settings.html' | relative_url }}).
 
 {% include shot.html src="lock.png" alt="The lock screen with the sideos logo and an Unlock button" caption="With the lock on, the wallet opens to this screen." %}
 
 ## Next
 
-- Put a credential in the wallet: [Receiving a credential]({% link user-guide/receiving.md %}).
-- Show one to a verifier: [Sharing a credential]({% link user-guide/sharing.md %}).
+- Put a credential in the wallet: [Receiving a credential]({{ '/user-guide/receiving.html' | relative_url }}).
+- Show one to a verifier: [Sharing a credential]({{ '/user-guide/sharing.html' | relative_url }}).

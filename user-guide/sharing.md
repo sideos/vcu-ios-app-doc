@@ -95,4 +95,4 @@ A website can ask for your mDL through Safari's **Digital Credentials API**. The
 | **The presentation request is invalid** / **This link has expired** | The request is malformed, or the verifier no longer accepts it. Ask for a new one. |
 | **Identity check failed** | Face ID or the passcode didn't succeed. Nothing was sent. |
 
-Refusals are recorded in your [Activity]({% link user-guide/activity.md %}).
+Refusals are recorded in your [Activity]({{ '/user-guide/activity.html' | relative_url }}).

@@ -33,7 +33,7 @@ Who you have dealt with.
 
 ## Activity
 
-The same history as on Home. See [Activity]({% link user-guide/activity.md %}).
+The same history as on Home. See [Activity]({{ '/user-guide/activity.html' | relative_url }}).
 
 ## Manage Tags
 
@@ -55,7 +55,7 @@ Lists every tag with the number of credentials that use it. The bin removes a ta
 
 ## Branding
 
-Name and colours; see [Branding]({% link branding.md %}). **Import brand from clipboard** applies a brand config you copied; **Reset branding** returns to the default.
+Name and colours; see [Branding]({{ '/branding.html' | relative_url }}). **Import brand from clipboard** applies a brand config you copied; **Reset branding** returns to the default.
 
 ## Developer mode
 

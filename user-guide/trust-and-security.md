@@ -23,7 +23,7 @@ Each credential is **bound to a key** created on this iPhone, in the **Secure En
 
 - Credentials, labels, requesters and activity are stored **on the iPhone only**. The wallet has no account and no cloud copy.
 - The files use iOS **complete data protection**: they can only be read while the iPhone is unlocked.
-- The wallet is **not** designed to keep data safe from someone who has unlocked your iPhone and the wallet; use **Lock wallet when opening** for that (see [Settings]({% link user-guide/settings.md %})).
+- The wallet is **not** designed to keep data safe from someone who has unlocked your iPhone and the wallet; use **Lock wallet when opening** for that (see [Settings]({{ '/user-guide/settings.html' | relative_url }})).
 - **Losing the iPhone loses the credentials.** The keys never leave the device, so credentials can't be restored from a backup or moved to a new iPhone. Ask the issuer to issue them again.
 - Deleting a credential, or **Reset wallet**, removes it and its key for good.
 
@@ -42,7 +42,7 @@ The wallet won't store a credential that **fails verification**, or one the issu
 
 ### Verifiers
 
-The consent screen's banner tells you what the wallet can establish about a requester: a **verified relying party** (access certificate under a trusted authority), a **verified website** (Web PKI), a **signed request from an unknown authority**, or an **unsigned request**. See [Sharing a credential]({% link user-guide/sharing.md %}#who-is-asking). Turn on **Only share with verified relying parties** to refuse everything below the first level.
+The consent screen's banner tells you what the wallet can establish about a requester: a **verified relying party** (access certificate under a trusted authority), a **verified website** (Web PKI), a **signed request from an unknown authority**, or an **unsigned request**. See [Sharing a credential]({{ '/user-guide/sharing.html' | relative_url }}#who-is-asking). Turn on **Only share with verified relying parties** to refuse everything below the first level.
 
 ### The trust lists
 

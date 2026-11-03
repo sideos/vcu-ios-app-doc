@@ -20,7 +20,7 @@ Home → **My Credentials** lists everything you hold.
 
 ### What "expires soon" means
 
-A credential is **Valid** until 30 days before its end date. From then on it reads **Expires in N days** (shown in amber), and after the end date **Expired** (in red). Either way it appears under the **bell** on Home and in Notifications; see [Activity]({% link user-guide/activity.md %}). The wallet doesn't delete expired credentials for you.
+A credential is **Valid** until 30 days before its end date. From then on it reads **Expires in N days** (shown in amber), and after the end date **Expired** (in red). Either way it appears under the **bell** on Home and in Notifications; see [Activity]({{ '/user-guide/activity.html' | relative_url }}). The wallet doesn't delete expired credentials for you.
 
 ## One credential
 
@@ -45,7 +45,7 @@ Tap **Add tag** and type a name. Tags show up as pills on the list. To remove a 
 
 ## Deleting a credential
 
-**Delete credential** (bottom of the detail screen) asks you to confirm. It **permanently removes the credential and its key from this iPhone**. The issuer isn't told, and nothing can restore it: you would need the issuer to issue it again. The deletion is recorded in your [Activity]({% link user-guide/activity.md %}).
+**Delete credential** (bottom of the detail screen) asks you to confirm. It **permanently removes the credential and its key from this iPhone**. The issuer isn't told, and nothing can restore it: you would need the issuer to issue it again. The deletion is recorded in your [Activity]({{ '/user-guide/activity.html' | relative_url }}).
 
 ## Developer mode
 

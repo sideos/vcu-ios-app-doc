@@ -51,7 +51,7 @@ or as a QR code for another device. Then poll `GET /api/presentations/requests/{
 
 - **Signed requests show who you are.** With `trustModel: "rpac"`, the wallet verifies your access certificate and shows your organisation as a **verified relying party**, including your `organizationIdentifier`, and your registration certificate as verified when you have one. Unsigned requests work, but the user sees a warning. Users can turn on a setting that refuses every request not signed with an access certificate.
 - **Encryption:** `jarm: true` (`direct_post.jwt`) is supported; the user sees "Response is encrypted to the verifier".
-- **Both formats:** DCQL queries for `dc+sd-jwt` and `mso_mdoc` work, as do `credential_sets` and `transaction_data` (TS12 payment, login, account access) on `dc+sd-jwt`. See [Approving a payment]({% link user-guide/sharing.md %}#approving-a-payment) for what the user sees.
+- **Both formats:** DCQL queries for `dc+sd-jwt` and `mso_mdoc` work, as do `credential_sets` and `transaction_data` (TS12 payment, login, account access) on `dc+sd-jwt`. See [Approving a payment]({{ '/user-guide/sharing.html' | relative_url }}#approving-a-payment) for what the user sees.
 - **Returning to your page.** If your response endpoint answers the wallet's post with `{"redirect_uri": "https://…"}` (OpenID4VP 1.0 §8.2), the wallet opens it after Share or Decline. That URL can also use your own app's scheme. Without one, the wallet tells the user the data was sent and to go back by hand. The VCu platform doesn't return a `redirect_uri` yet (requested), so for now your page notices the result by polling.
 - **Decline** posts `error=access_denied` (with your `state`) to your response endpoint.
 
