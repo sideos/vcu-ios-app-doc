@@ -92,3 +92,7 @@ bundle exec jekyll serve --config _config.yml,_config.local.yml
 
 The app's source, internal planning documents, change requests to the platform
 and the release process stay in the (private) app repository.
+
+## Licence
+
+Proprietary: see [LICENSE](LICENSE). The content is subject to the sideos Terms and Conditions; the bundled fonts keep their SIL Open Font License.

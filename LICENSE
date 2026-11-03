@@ -1,0 +1,13 @@
+Copyright (c) 2026 sideos. All rights reserved.
+
+This repository (the documentation text, screenshots, the sideos name and
+logos, and the example brand files) is proprietary to sideos and is made
+available subject to the sideos Terms and Conditions. No licence is granted
+except as set out in those Terms and Conditions.
+
+Third-party components keep their own licences:
+
+- Poppins and Source Sans 3 (assets/fonts): SIL Open Font License 1.1, see
+  assets/fonts/OFL-poppins.txt and assets/fonts/OFL-source-sans-3.txt.
+- Just the Docs (the Jekyll theme, loaded by GitHub Pages at build time): MIT
+  License, https://github.com/just-the-docs/just-the-docs/blob/main/LICENSE.txt.
