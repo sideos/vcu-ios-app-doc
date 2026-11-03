@@ -8,9 +8,12 @@ nav_order: 5
 A brand re-skins the wallet without a new build: **name, colours and logo** come from a JSON file that you paste into the app. It's the same idea as the [browser wallet's brand config](https://sideos.github.io/vcu-browser-wallet-doc/branding.html), applied as far as iOS has an equivalent. Everything on this page works from **build 24**.
 
 <div class="shot-row">
-{% include shot.html src="home-default.png" alt="The Home screen with the default etonec wordmark and dark buttons" caption="Default branding." %}
-{% include shot.html src="home.png" alt="The Home screen after importing the sideos brand: sideos logo and purple buttons" caption="After importing the sideos brand." %}
+{% include shot.html src="home.png" alt="The Home screen in the sideos brand: sideos logo and purple buttons" caption="The sideos brand, used for the screenshots in this guide." %}
+{% include shot.html src="custom-home.png" alt="The Home screen in a custom brand, Bastion: a compass-star logo and olive-green buttons on sand" caption="A custom brand (Bastion), after importing its config." %}
 </div>
+
+{: .note }
+> These pages use the **sideos** brand as the baseline. A build with no brand imported shows the wallet's built-in etonec wordmark and colours instead, and **Reset branding** goes back to that.
 
 ## Quick start
 
@@ -21,8 +24,8 @@ A brand re-skins the wallet without a new build: **name, colours and logo** come
 5. **Reset branding** (same screen) returns to the default.
 
 <div class="shot-row">
-{% include shot.html src="branding-default.png" alt="The Branding screen with the default etonec wordmark" caption="Settings → Branding, before." %}
-{% include shot.html src="branding.png" alt="The Branding screen after importing the sideos brand" caption="After the import." %}
+{% include shot.html src="branding.png" alt="The Branding screen showing the sideos logo and name" caption="Settings → Branding, before: sideos." %}
+{% include shot.html src="custom-branding.png" alt="The Branding screen after importing the Bastion brand: the compass-star logo and the name Bastion" caption="After importing Bastion." %}
 </div>
 
 The brand is stored on the device, so the app, the lock screen and the Safari consent sheet all use it. It is per device: nothing is sent anywhere.
@@ -30,9 +33,8 @@ The brand is stored on the device, so the app, the lock screen and the Safari co
 A brand carries a colour set for light **and** dark mode:
 
 <div class="shot-row">
-{% include shot.html src="home-dark.png" alt="The Home screen in dark mode with the sideos brand" caption="Home." %}
-{% include shot.html src="credentials-dark.png" alt="My Credentials in dark mode" caption="My Credentials." %}
-{% include shot.html src="share-consent-dark.png" alt="The consent screen in dark mode" caption="Consent." %}
+{% include shot.html src="home-dark.png" alt="The Home screen in dark mode with the sideos brand" caption="sideos, dark mode." %}
+{% include shot.html src="custom-home-dark.png" alt="The Home screen in dark mode with the Bastion brand: navy surface and light-olive buttons" caption="Bastion, dark mode." %}
 </div>
 
 ## File format

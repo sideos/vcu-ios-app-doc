@@ -85,14 +85,14 @@ MDL_DCQL='{"credentials":[{"id":"credential0","format":"mso_mdoc","meta":{"docty
 PAY_DCQL='{"credentials":[{"id":"credential0","format":"dc+sd-jwt","meta":{"vct_values":["urn:vcu:payment:1"]},"claims":[{"path":["iban"]}]}]}'
 PAY_TX=$(b64url_json '{"type":"urn:eudi:sca:payment:1","credential_ids":["credential0"],"payload":{"payee":{"name":"Café Aurora"},"amount":"12.80","currency":"EUR"}}')
 
-# shot <name> <light|dark> [launch args...]   (env LINK: a link to open; DEFAULT_BRAND=0 for etonec)
+# shot <name> <light|dark> [launch args...]   (env LINK: a link to open; BRAND_FILE: another brand than the default)
 shot() {
   local name=$1 mode=$2; shift 2
   if [ -n "${ONLY:-}" ] && [[ ",$ONLY," != *",$name,"* ]]; then return; fi
   xcrun simctl ui "$UDID" appearance "$mode"
   xcrun simctl terminate "$UDID" "$BUNDLE" >/dev/null 2>&1 || true
   local args=(-seedDemo -AppleLanguages "(en)" -AppleLocale en_US)
-  if [ "${DEFAULT_BRAND:-}" = 1 ]; then args+=(-noBrand); else args+=(-brandFile "$WORK/brand.json"); fi
+  args+=(-brandFile "${BRAND_FILE:-$WORK/brand.json}")
   [ -n "${LINK:-}" ] && args+=(-open "$LINK")
   xcrun simctl launch "$UDID" "$BUNDLE" "${args[@]}" "$@" >/dev/null
   sleep "${WAIT:-4}"
@@ -104,6 +104,9 @@ shot() {
 [ "${SKIP_BUILD:-}" = 1 ] || build
 mkdir -p "$OUT"
 cp "$BRAND" "$WORK/brand.json"
+# The brand the branding page shows as the customised one.
+CUSTOM_BRAND=${CUSTOM_BRAND:-$APP/Scripts/brand-bastion.json}
+cp "$CUSTOM_BRAND" "$WORK/brand-custom.json"
 
 xcrun simctl boot "$UDID" 2>/dev/null || true
 xcrun simctl bootstatus "$UDID" -b >/dev/null
@@ -119,9 +122,7 @@ echo "Capturing into $OUT"
 
 shot home light
 shot home-dark dark
-DEFAULT_BRAND=1 shot home-default light
 shot credentials light -route credentials
-shot credentials-dark dark -route credentials
 shot credential-detail light -route credentials,detail
 shot credential-expiring light -route credentials,detail-pid
 shot offer-consent light -show offer
@@ -129,7 +130,6 @@ shot tx-code light -show txcode
 shot issuer-choice light -show choice
 shot outcome-added light -show added
 LINK=$(vp_link shop.example.com "$MDL_DCQL") shot share-consent light
-LINK=$(vp_link shop.example.com "$MDL_DCQL") shot share-consent-dark dark
 LINK=$(vp_link pay.example.org "$PAY_DCQL" "[\"$PAY_TX\"]") shot payment-consent light
 shot outcome-shared light -show shared
 shot outcome-paid light -show paid
@@ -143,7 +143,13 @@ shot privacy light -route settings,privacy
 shot security light -route settings,security
 shot requesters light -route settings,requesters
 shot branding light -route settings,branding
-shot branding-default light -route settings,branding -noBrand
+
+# The customised brand (Bastion): the branding page's "after".
+export BRAND_FILE="$WORK/brand-custom.json"
+shot custom-home light
+shot custom-home-dark dark
+shot custom-branding light -route settings,branding
+unset BRAND_FILE
 shot tags light -route settings,tags
 WAIT=3 shot lock light -holdLock
 

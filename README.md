@@ -57,6 +57,8 @@ next to this one (`../vcu-ios-app`, or set `VCU_IOS_APP`). The script:
 2. builds it for the simulator and installs it fresh;
 3. imports `Scripts/brand-sideos.json` from the app repo (set `BRAND` to use
    another), seeds the demo credentials and activity, and opens each screen;
+   the `custom-*` shots on the branding page use `Scripts/brand-bastion.json`
+   instead (`CUSTOM_BRAND`);
 4. feeds consent screens through the app's real code path with by-value
    OpenID4VP links, so what you see is what the wallet really shows;
 5. saves 600 px wide PNGs into `assets/img/`.
