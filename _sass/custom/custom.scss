@@ -1,0 +1,209 @@
+// sideos branding for the iOS Wallet docs. Palette from the sideos style
+// guide: Pure White #FFFFFF, Rich Black #08141E, Purple #A258FF, Green #2FFFB4,
+// Magenta #FF456A. Fonts: Poppins for headings, Source Sans for text, both
+// SIL OFL and served from /assets/fonts (no request to a font CDN; the stylesheet
+// is /assets/css/just-the-docs-sideos.css, hence the ../fonts paths).
+
+@font-face { font-family: "Poppins"; font-weight: 500; font-style: normal; font-display: swap;
+  src: url("../fonts/poppins-latin-500-normal.woff2") format("woff2"); }
+@font-face { font-family: "Poppins"; font-weight: 600; font-style: normal; font-display: swap;
+  src: url("../fonts/poppins-latin-600-normal.woff2") format("woff2"); }
+@font-face { font-family: "Poppins"; font-weight: 700; font-style: normal; font-display: swap;
+  src: url("../fonts/poppins-latin-700-normal.woff2") format("woff2"); }
+@font-face { font-family: "Source Sans 3"; font-weight: 400; font-style: normal; font-display: swap;
+  src: url("../fonts/source-sans-3-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "Source Sans 3"; font-weight: 400; font-style: italic; font-display: swap;
+  src: url("../fonts/source-sans-3-latin-400-italic.woff2") format("woff2"); }
+@font-face { font-family: "Source Sans 3"; font-weight: 600; font-style: normal; font-display: swap;
+  src: url("../fonts/source-sans-3-latin-600-normal.woff2") format("woff2"); }
+
+$sideos-purple: #8236e8;       // text-safe purple on white
+$sideos-purple-bright: #a258ff; // the guide's purple, for dark surfaces
+$sideos-green: #2fffb4;
+$sideos-magenta: #ff456a;
+$sideos-black: #08141e;
+
+body {
+  font-family: "Source Sans 3", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 1.0625rem;
+}
+
+h1, h2, h3, h4, h5, h6, .site-product, .btn, .hero-title {
+  font-family: "Poppins", "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  letter-spacing: -0.01em;
+}
+h1, h2 { font-weight: 600; }
+h3, h4 { font-weight: 600; }
+
+// Style-guide headings: a short purple bar under the page title.
+.main-content h1:first-of-type::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 4px;
+  margin-top: 0.75rem;
+  border-radius: 2px;
+  background: linear-gradient(90deg, $sideos-purple-bright, #d84bff);
+}
+
+// Sidebar title: logo, then the product name.
+.site-title { display: flex; align-items: center; gap: 0.6rem; }
+.site-logo-img { display: block; height: 24px; width: auto; }
+.site-product {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: $sideos-black;
+  padding-left: 0.6rem;
+  border-left: 2px solid $sideos-purple-bright;
+  line-height: 1;
+}
+
+.btn.btn-primary { font-weight: 600; }
+.btn.btn-outline { border: 1px solid $sideos-purple; color: $sideos-purple; background: transparent; box-shadow: none; }
+
+table th { font-family: "Poppins", sans-serif; font-weight: 600; }
+code { font-size: 0.85em; }
+
+// ---- Screenshots ---------------------------------------------------------
+// Phone screenshots are 600 px wide PNGs (about 2x); show them 280 px wide in a
+// rounded frame. The simulator image has square corners, so the radius and the
+// dark bezel come from CSS.
+.shot {
+  margin: 1.5rem 0;
+  text-align: center;
+
+  img {
+    width: 280px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 34px;
+    border: 7px solid $sideos-black;
+    box-shadow: 0 14px 34px rgba(8, 20, 30, 0.2);
+    background: $sideos-black;
+  }
+
+  figcaption {
+    margin: 0.7rem auto 0;
+    max-width: 320px;
+    font-size: 0.85rem;
+    color: #4a5963;
+  }
+}
+
+// Two or three screenshots side by side; wraps on narrow screens.
+.shot-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.75rem;
+  justify-content: center;
+
+  .shot { flex: 0 1 280px; }
+}
+
+// ---- Landing page --------------------------------------------------------
+.hero {
+  margin: 0 0 2.5rem;
+  padding: 2.5rem 2rem 0;
+  border-radius: 24px;
+  color: #ffffff;
+  text-align: center;
+  overflow: hidden;
+  background:
+    radial-gradient(60% 55% at 12% 0%, rgba(216, 75, 255, 0.45), transparent 70%),
+    radial-gradient(55% 50% at 100% 20%, rgba(47, 255, 180, 0.22), transparent 70%),
+    radial-gradient(60% 60% at 80% 100%, rgba(108, 108, 255, 0.35), transparent 70%),
+    $sideos-black;
+
+  .hero-logo { height: 34px; width: auto; margin-bottom: 1.4rem; }
+  .hero-title {
+    margin: 0 auto 0.8rem;
+    max-width: 18em;
+    font-size: clamp(1.7rem, 4.2vw, 2.5rem);
+    line-height: 1.15;
+    font-weight: 600;
+    color: #ffffff;
+  }
+  h1.hero-title::after { content: none; }
+  .hero-lead { margin: 0 auto 1.4rem; max-width: 36em; font-size: 1.1rem; color: #d3dae0; }
+  .hero-actions { margin: 0 0 2rem; }
+  .hero-actions .btn { margin: 0.25rem 0.35rem; }
+  .hero .btn-primary, .btn.btn-primary { background-color: $sideos-purple; }
+  .btn.btn-outline-light { border: 1px solid rgba(255, 255, 255, 0.55); color: #ffffff; background: transparent; box-shadow: none; }
+
+  .hero-phones {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 1.25rem;
+    margin: 0 auto;
+
+    img {
+      width: 30%;
+      max-width: 230px;
+      height: auto;
+      display: block;
+      border-radius: 30px 30px 0 0;
+      border: 6px solid #1c2a35;
+      border-bottom: 0;
+      box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.35);
+    }
+    img:nth-child(2) { width: 34%; max-width: 260px; }
+  }
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 2rem;
+
+  .feature {
+    padding: 1.1rem 1.15rem 1rem;
+    border: 1px solid #e3e8ea;
+    border-radius: 16px;
+    background: #ffffff;
+
+    h3 { margin: 0 0 0.35rem; font-size: 1rem; }
+    p { margin: 0; font-size: 0.95rem; color: #3a4852; }
+    .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 0.5rem; }
+    .dot.purple { background: $sideos-purple-bright; }
+    .dot.green { background: $sideos-green; }
+    .dot.magenta { background: $sideos-magenta; }
+    .dot.black { background: $sideos-black; }
+  }
+}
+
+.steps {
+  counter-reset: step;
+  list-style: none;
+  padding: 0;
+  margin: 1.25rem 0 2rem;
+
+  li {
+    counter-increment: step;
+    position: relative;
+    padding: 0.2rem 0 1rem 3rem;
+    min-height: 2.4rem;
+  }
+  li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2.1rem;
+    height: 2.1rem;
+    border-radius: 50%;
+    background: $sideos-black;
+    color: #ffffff;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    text-align: center;
+    line-height: 2.1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero { padding: 2rem 1rem 0; border-radius: 18px; }
+  .hero .hero-phones img:first-child, .hero .hero-phones img:last-child { display: none; }
+  .hero .hero-phones img:nth-child(2) { width: 62%; }
+}
